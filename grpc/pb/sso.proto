@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./pb;pb";
+package pb;
+
+service SSOService {
+  rpc ValidationAccessToken(ValidationAccessTokenRequest) returns (ValidationAccessTokenResponse){}
+  rpc V2(ValidationAccessTokenRequest) returns (ValidationAccessTokenResponse) {}
+}
+
+message ValidationAccessTokenRequest {
+  string accessToken = 1;
+}
+
+message ValidationAccessTokenResponse {
+  string unionId = 1;
+}
