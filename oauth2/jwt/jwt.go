@@ -1,10 +1,10 @@
 package jwt
 
 import (
-	"barton.top/btgo/pkg/oauth2"
-	"barton.top/btgo/pkg/oauth2/jws"
 	"crypto/rsa"
 	"fmt"
+	"github.com/Barton0403/btgo-pkg/oauth2"
+	"github.com/Barton0403/btgo-pkg/oauth2/jws"
 	goauth2 "golang.org/x/oauth2"
 	"time"
 )

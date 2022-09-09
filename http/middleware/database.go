@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"barton.top/btgo/pkg/common"
-	"barton.top/btgo/pkg/http"
 	"database/sql"
+	"github.com/Barton0403/btgo-pkg/common"
+	"github.com/Barton0403/btgo-pkg/http"
 	_ "github.com/go-sql-driver/mysql"
 )
 

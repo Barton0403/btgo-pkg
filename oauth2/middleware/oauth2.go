@@ -1,11 +1,11 @@
 package middleware
 
 import (
-	"barton.top/btgo/pkg/common"
-	"barton.top/btgo/pkg/http"
-	"barton.top/btgo/pkg/http/middleware"
-	"barton.top/btgo/pkg/oauth2"
 	"context"
+	"github.com/Barton0403/btgo-pkg/common"
+	"github.com/Barton0403/btgo-pkg/http"
+	"github.com/Barton0403/btgo-pkg/http/middleware"
+	"github.com/Barton0403/btgo-pkg/oauth2"
 	"log"
 )
 

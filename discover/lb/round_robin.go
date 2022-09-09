@@ -1,7 +1,7 @@
 package lb
 
 import (
-	"barton.top/btgo/pkg/discover"
+	"github.com/Barton0403/btgo-pkg/discover"
 	"sync/atomic"
 )
 

@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"barton.top/btgo/pkg/http"
+	"github.com/Barton0403/btgo-pkg/http"
 	"github.com/openzipkin/zipkin-go"
 	zipkinmiddlewarehttp "github.com/openzipkin/zipkin-go/middleware/http"
 	nethttp "net/http"

@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"barton.top/btgo/pkg/http"
-	"barton.top/btgo/pkg/http/engine"
+	"github.com/Barton0403/btgo-pkg/http"
+	"github.com/Barton0403/btgo-pkg/http/engine"
 	"github.com/gin-gonic/gin"
 	"net/http/httptest"
 	"runtime"

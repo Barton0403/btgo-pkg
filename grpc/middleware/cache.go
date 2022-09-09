@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"barton.top/btgo/pkg/common"
 	"context"
+	"github.com/Barton0403/btgo-pkg/common"
 	"github.com/go-redis/redis/v8"
 	"google.golang.org/grpc"
 )

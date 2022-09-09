@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"barton.top/btgo/pkg/common"
-	"barton.top/btgo/pkg/http"
+	"github.com/Barton0403/btgo-pkg/common"
+	"github.com/Barton0403/btgo-pkg/http"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 

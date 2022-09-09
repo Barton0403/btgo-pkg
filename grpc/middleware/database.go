@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"barton.top/btgo/pkg/common"
 	"context"
 	"database/sql"
+	"github.com/Barton0403/btgo-pkg/common"
 	"google.golang.org/grpc"
 )
 

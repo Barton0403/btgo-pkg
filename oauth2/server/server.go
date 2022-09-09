@@ -1,8 +1,8 @@
 package server
 
 import (
-	"barton.top/btgo/pkg/oauth2"
-	"barton.top/btgo/pkg/oauth2/store"
+	"github.com/Barton0403/btgo-pkg/oauth2"
+	"github.com/Barton0403/btgo-pkg/oauth2/store"
 	goauth2 "github.com/go-oauth2/oauth2/v4"
 	"github.com/go-oauth2/oauth2/v4/errors"
 	"github.com/go-oauth2/oauth2/v4/manage"

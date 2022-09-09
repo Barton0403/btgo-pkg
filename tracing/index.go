@@ -1,8 +1,8 @@
 package tracing
 
 import (
-	"barton.top/btgo/pkg/grpc"
 	"context"
+	"github.com/Barton0403/btgo-pkg/grpc"
 	"github.com/opentracing/opentracing-go"
 	zipkintracer "github.com/openzipkin-contrib/zipkin-go-opentracing"
 	"strconv"

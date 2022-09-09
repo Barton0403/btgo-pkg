@@ -1,10 +1,10 @@
 package store
 
 import (
-	"barton.top/btgo/pkg/common"
-	"barton.top/btgo/pkg/http/middleware"
 	"context"
 	"encoding/json"
+	"github.com/Barton0403/btgo-pkg/common"
+	"github.com/Barton0403/btgo-pkg/http/middleware"
 	"github.com/go-oauth2/oauth2/v4"
 	"github.com/go-oauth2/oauth2/v4/models"
 	"github.com/google/uuid"
