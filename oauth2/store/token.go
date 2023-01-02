@@ -48,11 +48,23 @@ func (t *TokenStore) Create(ctx context.Context, info oauth2.TokenInfo) error {
 		}
 	}
 
+	// 使用refresh过期时间
 	err = cache.Set(nctx, basicID, string(jv), rexp).Err()
 	if err != nil {
 		return err
 	}
+	// 使用access过期时间
 	err = cache.Set(nctx, info.GetAccess(), basicID, aexp).Err()
+	if err != nil {
+		return err
+	}
+
+	// 记录关联token
+	if info.GetUserID() != "" {
+		cache.SAdd(ctx, "tokens:"+info.GetUserID(), basicID)
+		cache.SAdd(ctx, "tokens:"+info.GetUserID(), info.GetAccess())
+	}
+
 	return err
 }
 
@@ -73,6 +85,21 @@ func (t *TokenStore) RemoveByAccess(ctx context.Context, access string) error {
 
 func (t *TokenStore) RemoveByRefresh(ctx context.Context, refresh string) error {
 	return t.remove(ctx, refresh)
+}
+
+func (t *TokenStore) RemoveAll(ctx context.Context, id string) error {
+	cache := ctx.Value(common.CacheKey).(*middleware.Cache)
+	keys, err := cache.SMembers(ctx, "tokens:"+id).Result()
+	if err != nil {
+		return err
+	}
+
+	for _, key := range keys {
+		cache.Del(ctx, key)
+	}
+	cache.Del(ctx, "tokens:"+id)
+
+	return nil
 }
 
 func (t *TokenStore) getData(ctx context.Context, key string) (oauth2.TokenInfo, error) {

@@ -1,6 +1,7 @@
 package oauth2
 
 import (
+	"context"
 	"crypto/rsa"
 	"crypto/x509"
 	"encoding/pem"
@@ -43,7 +44,10 @@ type Server interface {
 	SetClientStorage(store oauth2.ClientStore)
 	SetTokenStorage(store oauth2.TokenStore)
 	SetPasswordAuthorizationHandler(handler server.PasswordAuthorizationHandler)
+	SetUserAuthorizationHandler(handler server.UserAuthorizationHandler)
 	ValidationBearerToken(r *http.Request) (oauth2.TokenInfo, error)
 	HandleTokenRequest(w http.ResponseWriter, r *http.Request) error
+	HandleAuthorizeRequest(w http.ResponseWriter, r *http.Request) error
 	GetManager() oauth2.Manager
+	Logout(ctx context.Context, id string)
 }
