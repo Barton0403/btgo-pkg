@@ -19,6 +19,12 @@ func ToString(value interface{}) (string, error) {
 		return fmt.Sprintf("%v", value.(float32)), nil
 	case reflect.Float64:
 		return fmt.Sprintf("%v", value.(float64)), nil
+	case reflect.Bool:
+		if value.(bool) == true {
+			return "true", nil
+		} else {
+			return "false", nil
+		}
 	}
 }
 
